@@ -66,6 +66,7 @@ def helpMSG() {
 
     ${c_yellow}Options:${c_reset}
     --cores             max cores for local use [default: $params.cores]
+    --memory            max memory for local use [default: $params.memory]
     --chunks            split input fasta file(s) in chunks of this size [default: $params.chunks]
     --output            name of the result folder [default: $params.output]
 
