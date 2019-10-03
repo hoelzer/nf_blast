@@ -1,10 +1,6 @@
 process blast {
-    //conda 'envs/blast.yaml'
-    //conda 'bioconda::blast=2.6.0'
     label 'blast'
     //publishDir "${params.output}/", mode: 'copy', pattern: "${fasta.baseName}.blast"
-
-    //container = 'nanozoo/blast:2.9.0--cbbc56f'
 
     input:
         set val(name), file(fasta) 
