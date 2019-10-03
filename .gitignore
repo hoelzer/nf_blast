@@ -9,6 +9,8 @@ __pycache__/
 # Nextflow
 results/
 work/
+.nextflow/
+.nextflow.*
 
 # Distribution / packaging
 .Python
