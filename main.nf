@@ -1,6 +1,8 @@
 #!/usr/bin/env nextflow
 nextflow.preview.dsl=2
 
+// Author: hoelzer.martin@gmail.com
+
 // terminal prints
 println " "
 println "\u001B[32mProfile: $workflow.profile\033[0m"
