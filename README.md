@@ -7,13 +7,11 @@ nextflow run main.nf --help
 ````
 
 ````
-nextflow run main.nf --fasta 'data/*.fa' --db data/db.fasta --cores 4 --outdir results
+nextflow run main.nf --fasta 'data/*.fa' --db data/db.fasta --cores 4 --outdir results -profile conda
 ````
 
-To disable the docker support change 
+You can switch between execution using docker containers and conda environments via 
 
 ````
-docker { enabled = false }
+-profile [docker|conda]
 ````
-
-In the nextflow.config file. 
