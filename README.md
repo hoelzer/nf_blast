@@ -7,7 +7,7 @@ nextflow run main.nf --help
 ````
 
 ````
-nextflow run main.nf --fasta data/*.fa --db data/db.fasta --cores 4 --outdir results
+nextflow run main.nf --fasta 'data/*.fa' --db data/db.fasta --cores 4 --outdir results
 ````
 
 To disable the docker support change 
