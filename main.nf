@@ -37,12 +37,7 @@ include 'modules/blast' params(output: params.output)
 include 'modules/publish' params(output: params.output, blastdir: params.blastdir)
 
 blast(input_ch, db)
-publish(blast.out.collectFile())
-
-//include 'modules/cat' params(output: params.output)
-//cat(blast.out.groupTuple().view())
-
-
+blast.out.collectFile(storeDir: "${params.output}/${params.blastdir}")
 
 
 /*************  
