@@ -1,5 +1,6 @@
 process blast {
     label 'blast'
+    echo true
     //publishDir "${params.output}/", mode: 'copy', pattern: "${fasta.baseName}.blast"
 
     input:
@@ -7,12 +8,13 @@ process blast {
         file db
     
     output:
-	    set val("${name}.blast"), file("${fasta.baseName}.blast") 
+	    set val(name), file("${name}.blast") 
     
     script:
     """
+    ls -la
     makeblastdb -in ${db} -dbtype nucl
-    blastn -task blastn -num_threads 6 -query ${fasta} -db ${db} -evalue 1e-10 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend qlen sstart send evalue bitscore slen" > ${fasta.baseName}.blast
+    blastn -task blastn -num_threads 4 -query ${fasta} -db ${db} -evalue 1e-10 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend qlen sstart send evalue bitscore slen" > ${name}.blast
     """
 }
 
